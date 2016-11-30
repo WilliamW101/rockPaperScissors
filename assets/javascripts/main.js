@@ -3,9 +3,9 @@ var user = document.getElementsByClassName('choice');
 // All Avaliable Choices
 var options = ['Rock', 'Paper', 'Scissors'];
 // Computers Choice
-var computer;
+var computer= '';
 // Outcome
-var result = ''
+var result = '';
 
 var winLose = document.getElementById('winLoss');
 // Number of Wins
@@ -19,7 +19,7 @@ var ties = 0
 for(var i = 0; i < user.length; i+= 1) {
 	var selected = user[i];
 	selected.addEventListener('click', function() {
-		console.log('Your Choice: ' + this.id);
+		// console.log('Your Choice: ' + this.id);
     document.getElementById('yours').innerHTML = ('You Selected - ' + this.id);
     user = this.id;
     computerChoice();
@@ -32,26 +32,26 @@ for(var i = 0; i < user.length; i+= 1) {
 function computerChoice() {
   var index = Math.floor(Math.random() * options.length);
   computer =  options[index];
-  console.log('The computer selected:  ' + computer);
+  // console.log('The computer selected:  ' + computer);
   compare(user, computer);
 }
 
 // Results - Compare
 function compare(user, computer) {
   if (user === computer) {
-    console.log('Tie');
+    // console.log('Tie');
     result = 'Tied!'
     ties++
   }
   else if (user === 'Rock') {
     switch(computer) {
       case 'Paper':
-        console.log('Lose');
+        // console.log('Lose');
         result = 'Lose!'
         losses++
         break;
       case 'Scissors':
-        console.log('Win');
+        // console.log('Win');
         result = 'Win!'
         wins++
         break;
@@ -59,12 +59,12 @@ function compare(user, computer) {
   } else if(user === 'Paper') {
       switch(computer) {
         case 'Rock':
-          console.log('Win');
+          // console.log('Win');
           result = 'Win!'
           wins++
           break;
         case 'Scissors':
-          console.log('Lose');
+          // console.log('Lose');
           result = 'Lose!'
           losses++
           break;
@@ -72,12 +72,12 @@ function compare(user, computer) {
   } else {
     switch(computer) {
       case 'Rock':
-        console.log('Lose');
+        // console.log('Lose');
         result = 'Lose!'
         losses++
         break;
       case 'Paper':
-        console.log('Win');
+        // console.log('Win');
         result = 'Win!'
         wins++
         break;
